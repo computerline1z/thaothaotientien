@@ -1,0 +1,12 @@
+﻿Tiến độ làm việc:
+	- Giai đoạn 1:
+		+  Dịch tài liệu.
+		+ Tóm tắt nội dung.
+	- Giai đoạn 2:
+		+ Phân thành từng mục trong bài thuyết trình.
+		+ Nội dung trong từng mục.
+		+ Ví dụ trong từng mục.
+		+ Cách trình bày slide.
+	- Giai đoạn 3:
+		+ Dự tính thời gian trình bày từng phục.
+		+ Phân bố người trình bài.
