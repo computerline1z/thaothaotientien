@@ -1,12 +1,12 @@
 ﻿Tiến độ làm việc:
-	- Giai đoạn 1:
+	- Giai đoạn 1:(Dealine: 21h ngày 18/09/2011)
 		+  Dịch tài liệu.
 		+ Tóm tắt nội dung.
-	- Giai đoạn 2:
+	- Giai đoạn 2:(Họp nhóm: 7h30' ngày 22/09/2011)
 		+ Phân thành từng mục trong bài thuyết trình.
 		+ Nội dung trong từng mục.
 		+ Ví dụ trong từng mục.
 		+ Cách trình bày slide.
-	- Giai đoạn 3:
+	- Giai đoạn 3:(Họp nhóm: 16h30' ngày 24/09/2011)
 		+ Dự tính thời gian trình bày từng phục.
 		+ Phân bố người trình bài.
