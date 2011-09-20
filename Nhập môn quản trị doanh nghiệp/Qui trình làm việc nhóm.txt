@@ -1,0 +1,6 @@
+﻿+ B1: Chọn thư ký
++ B2: Suy nghĩ cá nhân về định hướng giải quyết bài toán.
++ B3: Hội ý về định hướng giải quyết bài toán.
++ B4: Mỗi thành viên tự giải quyết bài toán theo định hướng đã đề ra.
++ B5: Trình bày ý kiến cá nhân và thảo luận (thư ký ghi chép)
++ B6: Chỉnh sửa & tổng kết
