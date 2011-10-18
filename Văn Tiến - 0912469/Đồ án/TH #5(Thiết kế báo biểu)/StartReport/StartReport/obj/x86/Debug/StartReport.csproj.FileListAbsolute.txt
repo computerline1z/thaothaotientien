@@ -8,3 +8,5 @@ E:\Study\KHTN Nam 3\My Exercise\CSDL NC\Test\StartReport\StartReport\obj\x86\Deb
 E:\Study\KHTN Nam 3\My Exercise\CSDL NC\Test\StartReport\StartReport\obj\x86\Debug\GenerateResource.write.1.tlog
 E:\Study\KHTN Nam 3\My Exercise\CSDL NC\Test\StartReport\StartReport\obj\x86\Debug\StartReport.exe
 E:\Study\KHTN Nam 3\My Exercise\CSDL NC\Test\StartReport\StartReport\obj\x86\Debug\StartReport.pdb
+E:\Study\KHTN Nam 3\My Exercise\CSDL NC\Test\StartReport\StartReport\obj\x86\Debug\RdlCompile.cache
+E:\Study\KHTN Nam 3\My Exercise\CSDL NC\Test\StartReport\StartReport\obj\x86\Debug\RdlCompile.compiled

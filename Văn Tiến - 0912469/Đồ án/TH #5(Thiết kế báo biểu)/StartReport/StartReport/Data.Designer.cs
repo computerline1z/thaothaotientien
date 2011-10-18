@@ -791,6 +791,8 @@ namespace StartReport {
             
             private global::System.Data.DataColumn columnlinhVuc;
             
+            private global::System.Data.DataColumn columngiaCa;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SanPhamDataTable() {
@@ -850,6 +852,14 @@ namespace StartReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn giaCaColumn {
+                get {
+                    return this.columngiaCa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -885,12 +895,13 @@ namespace StartReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SanPhamRow AddSanPhamRow(string maSanPham, string tenSanPham, LinhVucRow parentLinhVucRowByLinhVuc_SanPham) {
+            public SanPhamRow AddSanPhamRow(string maSanPham, string tenSanPham, LinhVucRow parentLinhVucRowByLinhVuc_SanPham, string giaCa) {
                 SanPhamRow rowSanPhamRow = ((SanPhamRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         maSanPham,
                         tenSanPham,
-                        null};
+                        null,
+                        giaCa};
                 if ((parentLinhVucRowByLinhVuc_SanPham != null)) {
                     columnValuesArray[2] = parentLinhVucRowByLinhVuc_SanPham[0];
                 }
@@ -919,6 +930,7 @@ namespace StartReport {
                 this.columnmaSanPham = base.Columns["maSanPham"];
                 this.columntenSanPham = base.Columns["tenSanPham"];
                 this.columnlinhVuc = base.Columns["linhVuc"];
+                this.columngiaCa = base.Columns["giaCa"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -930,6 +942,8 @@ namespace StartReport {
                 base.Columns.Add(this.columntenSanPham);
                 this.columnlinhVuc = new global::System.Data.DataColumn("linhVuc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlinhVuc);
+                this.columngiaCa = new global::System.Data.DataColumn("giaCa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngiaCa);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2493,6 +2507,22 @@ namespace StartReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string giaCa {
+                get {
+                    try {
+                        return ((string)(this[this.tableSanPham.giaCaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'giaCa\' in table \'SanPham\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSanPham.giaCaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public LinhVucRow LinhVucRow {
                 get {
                     return ((LinhVucRow)(this.GetParentRow(this.Table.ParentRelations["LinhVuc_SanPham"])));
@@ -2536,6 +2566,18 @@ namespace StartReport {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetlinhVucNull() {
                 this[this.tableSanPham.linhVucColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsgiaCaNull() {
+                return this.IsNull(this.tableSanPham.giaCaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetgiaCaNull() {
+                this[this.tableSanPham.giaCaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

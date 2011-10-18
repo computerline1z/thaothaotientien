@@ -7,11 +7,11 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="21" ViewPortY="41" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:DoanhNghiep" ZOrder="10" X="31" Y="51" Height="148" Width="168" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="144" />
-    <Shape ID="DesignTable:SanPham" ZOrder="9" X="267" Y="210" Height="102" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="98" />
+    <Shape ID="DesignTable:SanPham" ZOrder="9" X="271" Y="208" Height="125" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="121" />
     <Shape ID="DesignTable:DSSanPham" ZOrder="5" X="248" Y="52" Height="102" Width="165" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="98" />
-    <Shape ID="DesignTable:LinhVuc" ZOrder="6" X="44" Y="216" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="75" />
-    <Shape ID="DesignTable:ThanhVien" ZOrder="3" X="40" Y="320" Height="171" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="167" />
-    <Shape ID="DesignTable:Voucher" ZOrder="2" X="258" Y="330" Height="217" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="213" />
+    <Shape ID="DesignTable:LinhVuc" ZOrder="6" X="45" Y="220" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="75" />
+    <Shape ID="DesignTable:ThanhVien" ZOrder="3" X="42" Y="321" Height="171" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="167" />
+    <Shape ID="DesignTable:Voucher" ZOrder="2" X="258" Y="330" Height="217" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="213" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:DoanhNghiep_DSSanPham" ZOrder="8" LineWidth="11">
@@ -29,11 +29,11 @@
     <Connector ID="DesignRelation:SanPham_DSSanPham" ZOrder="7" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>340</X>
-          <Y>210</Y>
+          <X>344</X>
+          <Y>208</Y>
         </Point>
         <Point>
-          <X>340</X>
+          <X>344</X>
           <Y>154</Y>
         </Point>
       </RoutePoints>
@@ -41,24 +41,24 @@
     <Connector ID="DesignRelation:LinhVuc_SanPham" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>194</X>
-          <Y>242</Y>
+          <X>195</X>
+          <Y>243</Y>
         </Point>
         <Point>
-          <X>267</X>
-          <Y>242</Y>
+          <X>271</X>
+          <Y>243</Y>
         </Point>
       </RoutePoints>
     </Connector>
     <Connector ID="DesignRelation:ThanhVien_Voucher" ZOrder="1" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>190</X>
-          <Y>410</Y>
+          <X>192</X>
+          <Y>353</Y>
         </Point>
         <Point>
           <X>258</X>
-          <Y>410</Y>
+          <Y>353</Y>
         </Point>
       </RoutePoints>
     </Connector>
