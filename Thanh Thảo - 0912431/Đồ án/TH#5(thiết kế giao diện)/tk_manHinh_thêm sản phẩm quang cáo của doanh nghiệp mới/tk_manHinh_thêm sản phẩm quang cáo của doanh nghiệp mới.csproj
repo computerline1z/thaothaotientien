@@ -55,6 +55,12 @@
     <Compile Include="man hinh\Form1.Designer.cs">
       <DependentUpon>ký hợp đồng doanh nghiệp.cs</DependentUpon>
     </Compile>
+    <Compile Include="man hinh\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="man hinh\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="man hinh\quảng cao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="man hinh\ký hợp đồng doanh nghiệp.resx">
       <DependentUpon>ký hợp đồng doanh nghiệp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="man hinh\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="man hinh\quảng cao.resx">
       <DependentUpon>quảng cao.cs</DependentUpon>
