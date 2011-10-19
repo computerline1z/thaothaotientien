@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tk_manHinh_thêm sản phẩm quang cáo của doanh nghiệp mới", "tk_manHinh_thêm sản phẩm quang cáo của doanh nghiệp mới.csproj", "{27AA94E4-27F5-4FD3-AD63-6DF18EA39997}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27AA94E4-27F5-4FD3-AD63-6DF18EA39997}.Debug|x86.ActiveCfg = Debug|x86
+		{27AA94E4-27F5-4FD3-AD63-6DF18EA39997}.Debug|x86.Build.0 = Debug|x86
+		{27AA94E4-27F5-4FD3-AD63-6DF18EA39997}.Release|x86.ActiveCfg = Release|x86
+		{27AA94E4-27F5-4FD3-AD63-6DF18EA39997}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
