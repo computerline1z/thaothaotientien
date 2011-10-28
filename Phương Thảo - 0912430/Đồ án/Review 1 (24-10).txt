@@ -1,0 +1,19 @@
+Hop Dong: 
++ thoi han hop dong: thoi gian tu ngay may den ngay may
++ bo cai dau "..."
+San Pham Quang Cao: 
++ may cai thoi gian chinh lai het tu ngay may den ngay may
++ muc toi thieu: 
++ gia tiet kiem : co the tinh ra
+Hoa don:
++ co 2 loai hoa don: hoa don + phieu giao hang (co ghi dia chi +nguoi nhan), tach ra khoi Voucher
+Thanh vien:
++ co tong tien de khi mua truc tuyen thi tru tien ntn
++ phan ra ra nua
+
+Cac luu y:
++ Thiet ke o muc quan niem: khong co maVoucher, maHoaDon... (noi chug la cac ma nao khong co trong thuc te ma do tu phat sinh khi cai dat thi khong ghi vao)
++ Tim hieu them de tu viet dac ta, tao ra nhieu rang buoc toan ven va phu thuoc ham hon nua
++ Sau khi phan ra: chung minh bao toan phu thuoc ham, thong tin ..., => chi ra cach nao tot hon (co bao nhieu phu thuoc ham thi phan ra theo bay nhieu cach)
++ Khong su dung moi quan he 3, ma trong so do minh da ghi sai moi quan he ket hop mo rong
++ chi can thuc hien 3 qui trinh co yeu cau la duoc
