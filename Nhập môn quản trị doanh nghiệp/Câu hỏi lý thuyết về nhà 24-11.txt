@@ -1,0 +1,4 @@
+﻿B1: Nhà quản lý muốn gì ở nhân viên? NV muốn gì ở nhà QL
+B2: Một người QL có thể QL bao nhiêu NV. Phụ thuộc vào yếu tố nào? 
+Nguyên tắc phát triển NV
+B3: Có nên phân công lao động theo hướng chuyên môn hóa cao hay không?
