@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ShowPlanXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.1" Build="10.0.1600.22" xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan">
+  <BatchSequence>
+    <Batch>
+      <Statements>
+        <StmtSimple StatementCompId="1" StatementEstRows="1" StatementId="1" StatementOptmLevel="FULL" StatementSubTreeCost="283.457" StatementText="SELECT TTQC.tenQuangCao, TTQC.tenQuangCao, TTQC.tenLinhVuc, TTQC.diemNoiBat, TTQC.hinhAnh, CAST(TTQC.thongTinChiTiet AS NVARCHAR(200))&#xD;&#xA;FROM THONG_TIN_QUANG_CAO TTQC JOIN VOUCHER V ON TTQC.maQC = V.maQC JOIN SAN_PHAM_QUANG_CAO SPQC ON TTQC.maQC = SPQC.maQC&#xD;&#xA;WHERE DATEDIFF(D, SPQC.thoiGianBatDauQC, CAST('2011/11/20' AS DATETIME)) &gt; 0&#xD;&#xA;GROUP BY TTQC.tenQuangCao,TTQC.maSP, TTQC.tenQuangCao, TTQC.tenLinhVuc, TTQC.diemNoiBat, TTQC.hinhAnh,CAST(TTQC.thongTinChiTiet AS NVARCHAR(200))&#xD;&#xA;HAVING COUNT(V.maVoucher) &gt; 100&#xD;&#xA;" StatementType="SELECT" QueryHash="0x24871582609EA1A9" QueryPlanHash="0x2337E53187F7D8B0">
+          <StatementSetOptions ANSI_NULLS="true" ANSI_PADDING="true" ANSI_WARNINGS="true" ARITHABORT="true" CONCAT_NULL_YIELDS_NULL="true" NUMERIC_ROUNDABORT="false" QUOTED_IDENTIFIER="true" />
+          <QueryPlan DegreeOfParallelism="2" MemoryGrant="292048" CachedPlanSize="80" CompileTime="3129" CompileCPU="1928" CompileMemory="1192">
+            <RelOp AvgRowSize="521" EstimateCPU="0.028539" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="1" LogicalOp="Gather Streams" NodeId="0" Parallel="true" PhysicalOp="Parallelism" EstimatedTotalSubtreeCost="283.457">
+              <OutputList>
+                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                <ColumnReference Column="Expr1006" />
+              </OutputList>
+              <RunTimeInformation>
+                <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="1" ActualExecutions="1" />
+              </RunTimeInformation>
+              <Parallelism>
+                <RelOp AvgRowSize="521" EstimateCPU="0.0719471" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="1" LogicalOp="Filter" NodeId="1" Parallel="true" PhysicalOp="Filter" EstimatedTotalSubtreeCost="283.429">
+                  <OutputList>
+                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                    <ColumnReference Column="Expr1006" />
+                  </OutputList>
+                  <RunTimeInformation>
+                    <RunTimeCountersPerThread Thread="1" ActualRows="0" ActualEndOfScans="1" ActualExecutions="1" />
+                    <RunTimeCountersPerThread Thread="2" ActualRows="0" ActualEndOfScans="1" ActualExecutions="1" />
+                    <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                  </RunTimeInformation>
+                  <Filter StartupExpression="false">
+                    <RelOp AvgRowSize="525" EstimateCPU="76.4384" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="299780" LogicalOp="Compute Scalar" NodeId="2" Parallel="true" PhysicalOp="Compute Scalar" EstimatedTotalSubtreeCost="283.357">
+                      <OutputList>
+                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                        <ColumnReference Column="Expr1006" />
+                        <ColumnReference Column="Expr1007" />
+                      </OutputList>
+                      <ComputeScalar>
+                        <DefinedValues>
+                          <DefinedValue>
+                            <ColumnReference Column="Expr1007" />
+                            <ScalarOperator ScalarString="CONVERT_IMPLICIT(int,[Expr1014],0)">
+                              <Convert DataType="int" Style="0" Implicit="true">
+                                <ScalarOperator>
+                                  <Identifier>
+                                    <ColumnReference Column="Expr1014" />
+                                  </Identifier>
+                                </ScalarOperator>
+                              </Convert>
+                            </ScalarOperator>
+                          </DefinedValue>
+                        </DefinedValues>
+                        <RelOp AvgRowSize="525" EstimateCPU="76.4384" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="299780" LogicalOp="Aggregate" NodeId="3" Parallel="true" PhysicalOp="Hash Match" EstimatedTotalSubtreeCost="283.357">
+                          <OutputList>
+                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                            <ColumnReference Column="Expr1006" />
+                            <ColumnReference Column="Expr1014" />
+                          </OutputList>
+                          <MemoryFractions Input="0.412128" Output="1" />
+                          <RunTimeInformation>
+                            <RunTimeCountersPerThread Thread="1" ActualRows="499387" ActualEndOfScans="1" ActualExecutions="1" />
+                            <RunTimeCountersPerThread Thread="2" ActualRows="500251" ActualEndOfScans="1" ActualExecutions="1" />
+                            <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                          </RunTimeInformation>
+                          <Hash>
+                            <DefinedValues>
+                              <DefinedValue>
+                                <ColumnReference Column="Expr1014" />
+                                <ScalarOperator ScalarString="COUNT(*)">
+                                  <Aggregate AggType="COUNT*" Distinct="false" />
+                                </ScalarOperator>
+                              </DefinedValue>
+                            </DefinedValues>
+                            <HashKeysBuild>
+                              <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                              <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                              <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                              <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                              <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                              <ColumnReference Column="Expr1006" />
+                            </HashKeysBuild>
+                            <BuildResidual>
+                              <ScalarOperator ScalarString="[VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[tenQuangCao] as [TTQC].[tenQuangCao] = [VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[tenQuangCao] as [TTQC].[tenQuangCao] AND [VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[maSP] as [TTQC].[maSP] = [VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[maSP] as [TTQC].[maSP] AND [VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[tenLinhVuc] as [TTQC].[tenLinhVuc] = [VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[tenLinhVuc] as [TTQC].[tenLinhVuc] AND [VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[diemNoiBat] as [TTQC].[diemNoiBat] = [VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[diemNoiBat] as [TTQC].[diemNoiBat] AND [VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[hinhAnh] as [TTQC].[hinhAnh] = [VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[hinhAnh] as [TTQC].[hinhAnh] AND [Expr1006] = [Expr1006]">
+                                <Logical Operation="AND">
+                                  <ScalarOperator>
+                                    <Logical Operation="AND">
+                                      <ScalarOperator>
+                                        <Logical Operation="AND">
+                                          <ScalarOperator>
+                                            <Logical Operation="AND">
+                                              <ScalarOperator>
+                                                <Logical Operation="AND">
+                                                  <ScalarOperator>
+                                                    <Compare CompareOp="IS">
+                                                      <ScalarOperator>
+                                                        <Identifier>
+                                                          <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                                        </Identifier>
+                                                      </ScalarOperator>
+                                                      <ScalarOperator>
+                                                        <Identifier>
+                                                          <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                                        </Identifier>
+                                                      </ScalarOperator>
+                                                    </Compare>
+                                                  </ScalarOperator>
+                                                  <ScalarOperator>
+                                                    <Compare CompareOp="IS">
+                                                      <ScalarOperator>
+                                                        <Identifier>
+                                                          <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                                        </Identifier>
+                                                      </ScalarOperator>
+                                                      <ScalarOperator>
+                                                        <Identifier>
+                                                          <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                                        </Identifier>
+                                                      </ScalarOperator>
+                                                    </Compare>
+                                                  </ScalarOperator>
+                                                </Logical>
+                                              </ScalarOperator>
+                                              <ScalarOperator>
+                                                <Compare CompareOp="IS">
+                                                  <ScalarOperator>
+                                                    <Identifier>
+                                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                                    </Identifier>
+                                                  </ScalarOperator>
+                                                  <ScalarOperator>
+                                                    <Identifier>
+                                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                                    </Identifier>
+                                                  </ScalarOperator>
+                                                </Compare>
+                                              </ScalarOperator>
+                                            </Logical>
+                                          </ScalarOperator>
+                                          <ScalarOperator>
+                                            <Compare CompareOp="IS">
+                                              <ScalarOperator>
+                                                <Identifier>
+                                                  <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                                </Identifier>
+                                              </ScalarOperator>
+                                              <ScalarOperator>
+                                                <Identifier>
+                                                  <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                                </Identifier>
+                                              </ScalarOperator>
+                                            </Compare>
+                                          </ScalarOperator>
+                                        </Logical>
+                                      </ScalarOperator>
+                                      <ScalarOperator>
+                                        <Compare CompareOp="IS">
+                                          <ScalarOperator>
+                                            <Identifier>
+                                              <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                            </Identifier>
+                                          </ScalarOperator>
+                                          <ScalarOperator>
+                                            <Identifier>
+                                              <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                            </Identifier>
+                                          </ScalarOperator>
+                                        </Compare>
+                                      </ScalarOperator>
+                                    </Logical>
+                                  </ScalarOperator>
+                                  <ScalarOperator>
+                                    <Compare CompareOp="IS">
+                                      <ScalarOperator>
+                                        <Identifier>
+                                          <ColumnReference Column="Expr1006" />
+                                        </Identifier>
+                                      </ScalarOperator>
+                                      <ScalarOperator>
+                                        <Identifier>
+                                          <ColumnReference Column="Expr1006" />
+                                        </Identifier>
+                                      </ScalarOperator>
+                                    </Compare>
+                                  </ScalarOperator>
+                                </Logical>
+                              </ScalarOperator>
+                            </BuildResidual>
+                            <RelOp AvgRowSize="525" EstimateCPU="0.0719627" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="299780" LogicalOp="Filter" NodeId="4" Parallel="true" PhysicalOp="Filter" EstimatedTotalSubtreeCost="206.918">
+                              <OutputList>
+                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                <ColumnReference Column="Expr1006" />
+                              </OutputList>
+                              <RunTimeInformation>
+                                <RunTimeCountersPerThread Thread="1" ActualRows="499563" ActualEndOfScans="1" ActualExecutions="1" />
+                                <RunTimeCountersPerThread Thread="2" ActualRows="500437" ActualEndOfScans="1" ActualExecutions="1" />
+                                <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                              </RunTimeInformation>
+                              <Filter StartupExpression="false">
+                                <RelOp AvgRowSize="533" EstimateCPU="11.5732" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="299844" LogicalOp="Repartition Streams" NodeId="5" Parallel="true" PhysicalOp="Parallelism" EstimatedTotalSubtreeCost="206.846">
+                                  <OutputList>
+                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Alias="[V]" Column="maQC" />
+                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                    <ColumnReference Column="Expr1006" />
+                                  </OutputList>
+                                  <RunTimeInformation>
+                                    <RunTimeCountersPerThread Thread="1" ActualRows="499563" ActualEndOfScans="1" ActualExecutions="1" />
+                                    <RunTimeCountersPerThread Thread="2" ActualRows="500437" ActualEndOfScans="1" ActualExecutions="1" />
+                                    <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                  </RunTimeInformation>
+                                  <Parallelism PartitioningType="Hash">
+                                    <PartitionColumns>
+                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                      <ColumnReference Column="Expr1006" />
+                                    </PartitionColumns>
+                                    <RelOp AvgRowSize="533" EstimateCPU="5.76723" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="299844" LogicalOp="Inner Join" NodeId="6" Parallel="true" PhysicalOp="Hash Match" EstimatedTotalSubtreeCost="195.273">
+                                      <OutputList>
+                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Alias="[V]" Column="maQC" />
+                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                        <ColumnReference Column="Expr1006" />
+                                      </OutputList>
+                                      <MemoryFractions Input="0.698414" Output="0.410578" />
+                                      <RunTimeInformation>
+                                        <RunTimeCountersPerThread Thread="2" ActualRows="499745" ActualEndOfScans="1" ActualExecutions="1" />
+                                        <RunTimeCountersPerThread Thread="1" ActualRows="500255" ActualEndOfScans="1" ActualExecutions="1" />
+                                        <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                      </RunTimeInformation>
+                                      <Hash>
+                                        <DefinedValues />
+                                        <HashKeysBuild>
+                                          <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Alias="[V]" Column="maQC" />
+                                        </HashKeysBuild>
+                                        <HashKeysProbe>
+                                          <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maQC" />
+                                        </HashKeysProbe>
+                                        <RelOp AvgRowSize="11" EstimateCPU="1.22663" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="1000000" LogicalOp="Bitmap Create" NodeId="7" Parallel="true" PhysicalOp="Bitmap" EstimatedTotalSubtreeCost="5.43464">
+                                          <OutputList>
+                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Alias="[V]" Column="maQC" />
+                                          </OutputList>
+                                          <RunTimeInformation>
+                                            <RunTimeCountersPerThread Thread="1" ActualRows="500255" ActualEndOfScans="1" ActualExecutions="1" />
+                                            <RunTimeCountersPerThread Thread="2" ActualRows="499745" ActualEndOfScans="1" ActualExecutions="1" />
+                                            <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                          </RunTimeInformation>
+                                          <Bitmap>
+                                            <DefinedValues>
+                                              <DefinedValue>
+                                                <ColumnReference Column="Opt_Bitmap1011" />
+                                              </DefinedValue>
+                                            </DefinedValues>
+                                            <HashKeys>
+                                              <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Alias="[V]" Column="maQC" />
+                                            </HashKeys>
+                                            <RelOp AvgRowSize="11" EstimateCPU="1.22663" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="1000000" LogicalOp="Repartition Streams" NodeId="8" Parallel="true" PhysicalOp="Parallelism" EstimatedTotalSubtreeCost="5.43464">
+                                              <OutputList>
+                                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Alias="[V]" Column="maQC" />
+                                              </OutputList>
+                                              <RunTimeInformation>
+                                                <RunTimeCountersPerThread Thread="1" ActualRows="500255" ActualEndOfScans="1" ActualExecutions="1" />
+                                                <RunTimeCountersPerThread Thread="2" ActualRows="499745" ActualEndOfScans="1" ActualExecutions="1" />
+                                                <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                              </RunTimeInformation>
+                                              <Parallelism PartitioningType="Hash">
+                                                <PartitionColumns>
+                                                  <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Alias="[V]" Column="maQC" />
+                                                </PartitionColumns>
+                                                <RelOp AvgRowSize="11" EstimateCPU="0.550079" EstimateIO="3.65794" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="1000000" LogicalOp="Clustered Index Scan" NodeId="9" Parallel="true" PhysicalOp="Clustered Index Scan" EstimatedTotalSubtreeCost="4.20802" TableCardinality="1000000">
+                                                  <OutputList>
+                                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Alias="[V]" Column="maQC" />
+                                                  </OutputList>
+                                                  <RunTimeInformation>
+                                                    <RunTimeCountersPerThread Thread="2" ActualRows="493008" ActualEndOfScans="1" ActualExecutions="1" />
+                                                    <RunTimeCountersPerThread Thread="1" ActualRows="506992" ActualEndOfScans="1" ActualExecutions="1" />
+                                                    <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                                  </RunTimeInformation>
+                                                  <IndexScan Ordered="false" ForcedIndex="false" NoExpandHint="false">
+                                                    <DefinedValues>
+                                                      <DefinedValue>
+                                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Alias="[V]" Column="maQC" />
+                                                      </DefinedValue>
+                                                    </DefinedValues>
+                                                    <Object Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Index="[PK__VOUCHER__E335C40020C1E124]" Alias="[V]" IndexKind="Clustered" />
+                                                  </IndexScan>
+                                                </RelOp>
+                                              </Parallelism>
+                                            </RelOp>
+                                          </Bitmap>
+                                        </RelOp>
+                                        <RelOp AvgRowSize="533" EstimateCPU="2.33878" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="281163" LogicalOp="Inner Join" NodeId="10" Parallel="true" PhysicalOp="Hash Match" EstimatedTotalSubtreeCost="184.071">
+                                          <OutputList>
+                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maQC" />
+                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                            <ColumnReference Column="Expr1006" />
+                                          </OutputList>
+                                          <MemoryFractions Input="0.301586" Output="0.177294" />
+                                          <RunTimeInformation>
+                                            <RunTimeCountersPerThread Thread="2" ActualRows="499750" ActualEndOfScans="1" ActualExecutions="1" />
+                                            <RunTimeCountersPerThread Thread="1" ActualRows="500243" ActualEndOfScans="1" ActualExecutions="1" />
+                                            <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                          </RunTimeInformation>
+                                          <Hash>
+                                            <DefinedValues />
+                                            <HashKeysBuild>
+                                              <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                            </HashKeysBuild>
+                                            <HashKeysProbe>
+                                              <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maQC" />
+                                            </HashKeysProbe>
+                                            <RelOp AvgRowSize="11" EstimateCPU="0.387938" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="300000" LogicalOp="Bitmap Create" NodeId="11" Parallel="true" PhysicalOp="Bitmap" EstimatedTotalSubtreeCost="10.4208">
+                                              <OutputList>
+                                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                              </OutputList>
+                                              <RunTimeInformation>
+                                                <RunTimeCountersPerThread Thread="1" ActualRows="500246" ActualEndOfScans="1" ActualExecutions="1" />
+                                                <RunTimeCountersPerThread Thread="2" ActualRows="499754" ActualEndOfScans="1" ActualExecutions="1" />
+                                                <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                              </RunTimeInformation>
+                                              <Bitmap>
+                                                <DefinedValues>
+                                                  <DefinedValue>
+                                                    <ColumnReference Column="Opt_Bitmap1010" />
+                                                  </DefinedValue>
+                                                </DefinedValues>
+                                                <HashKeys>
+                                                  <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                                </HashKeys>
+                                                <RelOp AvgRowSize="11" EstimateCPU="0.387938" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="300000" LogicalOp="Repartition Streams" NodeId="12" Parallel="true" PhysicalOp="Parallelism" EstimatedTotalSubtreeCost="10.4208">
+                                                  <OutputList>
+                                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                                  </OutputList>
+                                                  <RunTimeInformation>
+                                                    <RunTimeCountersPerThread Thread="1" ActualRows="500246" ActualEndOfScans="1" ActualExecutions="1" />
+                                                    <RunTimeCountersPerThread Thread="2" ActualRows="499754" ActualEndOfScans="1" ActualExecutions="1" />
+                                                    <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                                  </RunTimeInformation>
+                                                  <Parallelism PartitioningType="Hash">
+                                                    <PartitionColumns>
+                                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                                    </PartitionColumns>
+                                                    <RelOp AvgRowSize="19" EstimateCPU="0.550079" EstimateIO="9.19275" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="300000" LogicalOp="Clustered Index Scan" NodeId="14" Parallel="true" PhysicalOp="Clustered Index Scan" EstimatedTotalSubtreeCost="9.74283" TableCardinality="1000000">
+                                                      <OutputList>
+                                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                                      </OutputList>
+                                                      <RunTimeInformation>
+                                                        <RunTimeCountersPerThread Thread="2" ActualRows="498225" ActualEndOfScans="1" ActualExecutions="1" />
+                                                        <RunTimeCountersPerThread Thread="1" ActualRows="501775" ActualEndOfScans="1" ActualExecutions="1" />
+                                                        <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                                      </RunTimeInformation>
+                                                      <IndexScan Ordered="false" ForcedIndex="false" NoExpandHint="false">
+                                                        <DefinedValues>
+                                                          <DefinedValue>
+                                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                                          </DefinedValue>
+                                                        </DefinedValues>
+                                                        <Object Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Index="[PK__SAN_PHAM__7A3EFC2C03317E3D]" Alias="[SPQC]" IndexKind="Clustered" />
+                                                        <Predicate>
+                                                          <ScalarOperator ScalarString="datediff(day,[VOUCHERDB].[dbo].[SAN_PHAM_QUANG_CAO].[thoiGianBatDauQC] as [SPQC].[thoiGianBatDauQC],'2011-11-20 00:00:00.000')&gt;(0)">
+                                                            <Compare CompareOp="GT">
+                                                              <ScalarOperator>
+                                                                <Intrinsic FunctionName="datediff">
+                                                                  <ScalarOperator>
+                                                                    <Const ConstValue="(4)" />
+                                                                  </ScalarOperator>
+                                                                  <ScalarOperator>
+                                                                    <Identifier>
+                                                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="thoiGianBatDauQC" />
+                                                                    </Identifier>
+                                                                  </ScalarOperator>
+                                                                  <ScalarOperator>
+                                                                    <Const ConstValue="'2011-11-20 00:00:00.000'" />
+                                                                  </ScalarOperator>
+                                                                </Intrinsic>
+                                                              </ScalarOperator>
+                                                              <ScalarOperator>
+                                                                <Const ConstValue="(0)" />
+                                                              </ScalarOperator>
+                                                            </Compare>
+                                                          </ScalarOperator>
+                                                        </Predicate>
+                                                      </IndexScan>
+                                                    </RelOp>
+                                                  </Parallelism>
+                                                </RelOp>
+                                              </Bitmap>
+                                            </RelOp>
+                                            <RelOp AvgRowSize="529" EstimateCPU="5.79743" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="281163" LogicalOp="Repartition Streams" NodeId="16" Parallel="true" PhysicalOp="Parallelism" EstimatedTotalSubtreeCost="171.312">
+                                              <OutputList>
+                                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maQC" />
+                                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                                <ColumnReference Column="Expr1006" />
+                                              </OutputList>
+                                              <RunTimeInformation>
+                                                <RunTimeCountersPerThread Thread="1" ActualRows="500243" ActualEndOfScans="1" ActualExecutions="1" />
+                                                <RunTimeCountersPerThread Thread="2" ActualRows="499750" ActualEndOfScans="1" ActualExecutions="1" />
+                                                <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                              </RunTimeInformation>
+                                              <Parallelism PartitioningType="Hash">
+                                                <PartitionColumns>
+                                                  <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maQC" />
+                                                </PartitionColumns>
+                                                <RelOp AvgRowSize="529" EstimateCPU="0.05" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="1000000" LogicalOp="Compute Scalar" NodeId="18" Parallel="true" PhysicalOp="Compute Scalar" EstimatedTotalSubtreeCost="165.074">
+                                                  <OutputList>
+                                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maQC" />
+                                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                                    <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                                    <ColumnReference Column="Expr1006" />
+                                                  </OutputList>
+                                                  <ComputeScalar>
+                                                    <DefinedValues>
+                                                      <DefinedValue>
+                                                        <ColumnReference Column="Expr1006" />
+                                                        <ScalarOperator ScalarString="CONVERT(nvarchar(200),[VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[thongTinChiTiet] as [TTQC].[thongTinChiTiet],0)">
+                                                          <Convert DataType="nvarchar" Length="400" Style="0" Implicit="false">
+                                                            <ScalarOperator>
+                                                              <Identifier>
+                                                                <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="thongTinChiTiet" />
+                                                              </Identifier>
+                                                            </ScalarOperator>
+                                                          </Convert>
+                                                        </ScalarOperator>
+                                                      </DefinedValue>
+                                                    </DefinedValues>
+                                                    <RelOp AvgRowSize="574" EstimateCPU="0.550079" EstimateIO="164.474" EstimateRebinds="0" EstimateRewinds="0" EstimateRows="1000000" LogicalOp="Clustered Index Scan" NodeId="19" Parallel="true" PhysicalOp="Clustered Index Scan" EstimatedTotalSubtreeCost="165.024" TableCardinality="1000000">
+                                                      <OutputList>
+                                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maQC" />
+                                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="thongTinChiTiet" />
+                                                        <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                                      </OutputList>
+                                                      <RunTimeInformation>
+                                                        <RunTimeCountersPerThread Thread="2" ActualRows="494582" ActualEndOfScans="1" ActualExecutions="1" />
+                                                        <RunTimeCountersPerThread Thread="1" ActualRows="505411" ActualEndOfScans="1" ActualExecutions="1" />
+                                                        <RunTimeCountersPerThread Thread="0" ActualRows="0" ActualEndOfScans="0" ActualExecutions="0" />
+                                                      </RunTimeInformation>
+                                                      <IndexScan Ordered="false" ForcedIndex="false" NoExpandHint="false">
+                                                        <DefinedValues>
+                                                          <DefinedValue>
+                                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maQC" />
+                                                          </DefinedValue>
+                                                          <DefinedValue>
+                                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenQuangCao" />
+                                                          </DefinedValue>
+                                                          <DefinedValue>
+                                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maSP" />
+                                                          </DefinedValue>
+                                                          <DefinedValue>
+                                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="hinhAnh" />
+                                                          </DefinedValue>
+                                                          <DefinedValue>
+                                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="diemNoiBat" />
+                                                          </DefinedValue>
+                                                          <DefinedValue>
+                                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="thongTinChiTiet" />
+                                                          </DefinedValue>
+                                                          <DefinedValue>
+                                                            <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="tenLinhVuc" />
+                                                          </DefinedValue>
+                                                        </DefinedValues>
+                                                        <Object Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Index="[PK__THONG_TI__7A3EFC2C07020F21]" Alias="[TTQC]" IndexKind="Clustered" />
+                                                        <Predicate>
+                                                          <ScalarOperator ScalarString="PROBE([Opt_Bitmap1010],[VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[maQC] as [TTQC].[maQC],N'[IN ROW]') AND PROBE([Opt_Bitmap1011],[VOUCHERDB].[dbo].[THONG_TIN_QUANG_CAO].[maQC] as [TTQC].[maQC],N'[IN ROW]')">
+                                                            <Logical Operation="AND">
+                                                              <ScalarOperator>
+                                                                <Intrinsic FunctionName="PROBE">
+                                                                  <ScalarOperator>
+                                                                    <Identifier>
+                                                                      <ColumnReference Column="Opt_Bitmap1010" />
+                                                                    </Identifier>
+                                                                  </ScalarOperator>
+                                                                  <ScalarOperator>
+                                                                    <Identifier>
+                                                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maQC" />
+                                                                    </Identifier>
+                                                                  </ScalarOperator>
+                                                                  <ScalarOperator>
+                                                                    <Const ConstValue="N'[IN ROW]'" />
+                                                                  </ScalarOperator>
+                                                                </Intrinsic>
+                                                              </ScalarOperator>
+                                                              <ScalarOperator>
+                                                                <Intrinsic FunctionName="PROBE">
+                                                                  <ScalarOperator>
+                                                                    <Identifier>
+                                                                      <ColumnReference Column="Opt_Bitmap1011" />
+                                                                    </Identifier>
+                                                                  </ScalarOperator>
+                                                                  <ScalarOperator>
+                                                                    <Identifier>
+                                                                      <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[THONG_TIN_QUANG_CAO]" Alias="[TTQC]" Column="maQC" />
+                                                                    </Identifier>
+                                                                  </ScalarOperator>
+                                                                  <ScalarOperator>
+                                                                    <Const ConstValue="N'[IN ROW]'" />
+                                                                  </ScalarOperator>
+                                                                </Intrinsic>
+                                                              </ScalarOperator>
+                                                            </Logical>
+                                                          </ScalarOperator>
+                                                        </Predicate>
+                                                      </IndexScan>
+                                                    </RelOp>
+                                                  </ComputeScalar>
+                                                </RelOp>
+                                              </Parallelism>
+                                            </RelOp>
+                                          </Hash>
+                                        </RelOp>
+                                      </Hash>
+                                    </RelOp>
+                                  </Parallelism>
+                                </RelOp>
+                                <Predicate>
+                                  <ScalarOperator ScalarString="[VOUCHERDB].[dbo].[VOUCHER].[maQC] as [V].[maQC]=[VOUCHERDB].[dbo].[SAN_PHAM_QUANG_CAO].[maQC] as [SPQC].[maQC]">
+                                    <Compare CompareOp="EQ">
+                                      <ScalarOperator>
+                                        <Identifier>
+                                          <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[VOUCHER]" Alias="[V]" Column="maQC" />
+                                        </Identifier>
+                                      </ScalarOperator>
+                                      <ScalarOperator>
+                                        <Identifier>
+                                          <ColumnReference Database="[VOUCHERDB]" Schema="[dbo]" Table="[SAN_PHAM_QUANG_CAO]" Alias="[SPQC]" Column="maQC" />
+                                        </Identifier>
+                                      </ScalarOperator>
+                                    </Compare>
+                                  </ScalarOperator>
+                                </Predicate>
+                              </Filter>
+                            </RelOp>
+                          </Hash>
+                        </RelOp>
+                      </ComputeScalar>
+                    </RelOp>
+                    <Predicate>
+                      <ScalarOperator ScalarString="[Expr1007]&gt;(100)">
+                        <Compare CompareOp="GT">
+                          <ScalarOperator>
+                            <Identifier>
+                              <ColumnReference Column="Expr1007" />
+                            </Identifier>
+                          </ScalarOperator>
+                          <ScalarOperator>
+                            <Const ConstValue="(100)" />
+                          </ScalarOperator>
+                        </Compare>
+                      </ScalarOperator>
+                    </Predicate>
+                  </Filter>
+                </RelOp>
+              </Parallelism>
+            </RelOp>
+          </QueryPlan>
+        </StmtSimple>
+      </Statements>
+    </Batch>
+  </BatchSequence>
+</ShowPlanXML>
